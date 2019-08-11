@@ -7,5 +7,31 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/schegol/cafe-glitch.git"
+  },
+  "bugs": {
+    "url": "https://github.com/schegol/cafe-glitch/issues"
+  },
+  "homepage": "https://github.com/schegol/cafe-glitch#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.6.1",
+    "browser-sync": "^2.26.7",
+    "glyphhanger": "^3.2.0",
+    "gulp": "^4.0.2",
+    "gulp-csso": "^3.0.1",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^6.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "node-normalize-scss": "^8.0.1"
+  },
+  "dependencies": {
+    "gulp-rename": "^1.4.0"
+  }
 }
