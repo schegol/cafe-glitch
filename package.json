@@ -4,7 +4,8 @@
   "description": "Cafe Glitch website",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gulp build",
+    "start": "gulp start"
   },
   "author": "",
   "license": "ISC",
@@ -19,9 +20,11 @@
   "devDependencies": {
     "autoprefixer": "^9.6.1",
     "browser-sync": "^2.26.7",
+    "del": "^5.0.0",
     "glyphhanger": "^3.2.0",
     "gulp": "^4.0.2",
     "gulp-csso": "^3.0.1",
+    "gulp-ext-replace": "^0.3.0",
     "gulp-htmlmin": "^5.0.1",
     "gulp-imagemin": "^6.0.0",
     "gulp-plumber": "^1.2.1",
@@ -29,6 +32,7 @@
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
+    "imagemin-webp": "^5.1.0",
     "node-normalize-scss": "^8.0.1"
   },
   "dependencies": {
