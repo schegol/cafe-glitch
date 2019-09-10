@@ -14,17 +14,23 @@ var webp = require("imagemin-webp");
 var replace = require("gulp-ext-replace");
 var del = require("del");
 var uglify = require("gulp-uglify");
-var htmlmin = require('gulp-htmlmin');
-var glyphhanger = require('glyphhanger');
+var htmlmin = require("gulp-htmlmin");
+var ttf2woff = require("gulp-ttf2woff");
+var ttf2woff2 = require("gulp-ttf2woff2");
 
-// gulp.task("glyph", function () {
-//   return gulp.src("source/fonts/*.otf")
-//     .pipe(glyphhanger({
-//       formats: "woff2,woff",
-//       whitelist: "U+20,U+41,U+45,U+46,U+47,U+48,U+49,U+4C,U+54,U+C9"
-//     }))
-//     .pipe(gulp.dest("build/fonts"));
-// })
+gulp.task("woff", function (done) {
+  gulp.src(["source/fonts/*.ttf"])
+    .pipe(ttf2woff())
+    .pipe(gulp.dest("build/fonts"));
+    done();
+});
+
+gulp.task("woff2", function (done) {
+  gulp.src(["source/fonts/*.ttf"])
+    .pipe(ttf2woff2())
+    .pipe(gulp.dest("build/fonts"));
+    done();
+});
 
 gulp.task("css", function () {
   return gulp.src("source/sass/style.scss")
@@ -100,7 +106,7 @@ gulp.task("copy", function () {
   return gulp.src([
     "source/fonts/**/*.{woff,woff2}",
     "source/img/*.webp",
-    "source/favicon"
+    "source/favicon/*"
   ], {
     base: "source"
   })
@@ -111,5 +117,5 @@ gulp.task("clean", function () {
   return del("build");
 });
 
-gulp.task("build", gulp.series("clean", "copy", "css", "js", "images", "webp", "html"));
+gulp.task("build", gulp.series("clean", "copy", "woff", "woff2", "css", "js", "images", "webp", "html"));
 gulp.task("start", gulp.series("build", "server"));

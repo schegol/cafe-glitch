@@ -1,0 +1,37 @@
+.header {
+  display: grid;
+  grid-template-rows: auto 270px auto;
+  grid-template-columns: auto 270px auto;
+  width: 100%;
+  min-height: 400px;
+
+  background-color: #392b34;
+  background-image: radial-gradient($dark-color 0%, $dark-color 5%, transparent 45%),
+                    radial-gradient($dark-color 0%, $dark-color 25%, transparent 60%),
+                    radial-gradient($dark-color 0%, $dark-color 45%, transparent 65%),
+                    radial-gradient($dark-color 0%, $dark-color 65%, transparent 72%),
+                    url("../img/header-bg-xs@1x.jpg");
+  background-repeat: repeat-x, repeat-x, repeat-x, repeat-x, no-repeat;
+  background-size: 5px 5px, 10px 10px, 15px 15px, 20px 20px, cover;
+  background-position: center bottom 45px, center bottom 30px, center bottom 13px, center bottom -10px, center;
+}
+
+.header__logo-nest {
+  position: relative;
+
+  grid-row: 2/3;
+  grid-column: 2/3;
+
+  background-color: rgba(0, 0, 0, .4);
+  border-radius: 5%;
+}
+
+.header__logo {
+  position: absolute;
+
+  display: block;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
