@@ -1,0 +1,122 @@
+.modal-agreement {
+  position: fixed;
+
+  bottom: 0;
+  left: 0;
+
+  display: grid;
+  grid-template-rows: 36px auto;
+  width: 100%;
+  min-height: 100px;
+
+  font-family: "Determination", "Arial", sans-serif;
+
+  &--closed {
+    display: none;
+  }
+}
+
+.modal-agreement__header {
+  @include reset;
+
+  display: grid;
+  grid-template-columns: auto 20px 10px 20px 20px;
+  grid-template-rows: auto 20px auto;
+
+  background-color: #0d0f1a;
+  background-image: linear-gradient(to bottom, #121524, #0d0f1c);
+}
+
+.modal-agreement__button {
+  position: relative;
+
+  border-radius: 50%;
+
+  &--resize {
+    grid-column: 2/3;
+    grid-row: 2/3;
+
+    background-color: #004d26;
+  }
+
+  &--close {
+    grid-column: 4/5;
+    grid-row: 2/3;
+
+    background-color: #4d0000;
+  }
+}
+
+.modal-agreement__button-icon {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+.modal-agreement__body {
+  @include reset;
+
+  display: grid;
+  grid-template-columns: 20px auto 20px;
+  grid-template-rows: auto 1fr auto;
+
+  background-color: #161c18;
+  background-image: url("../img/modal-pixel-bg@1x.png");
+  background-repeat: repeat;
+  box-shadow: inset 0 0 30px rgba(0,0,0,.8);
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/modal-pixel-bg@2x.png");
+    background-size: 3px auto;
+  }
+}
+
+.modal-agreement__text {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  padding: 40px 0 40px;
+
+  color: #d3daff;
+  text-shadow: 0 0 5px rgba(255,255,255,.5);
+  hyphens: auto;
+  text-align: justify;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  51% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.modal-agreement__text-underscore {
+  animation-name: blink;
+  animation-duration: .8s;
+  animation-iteration-count: infinite;
+}
+
+@media (min-width: $m-width) {
+  .modal-agreement__text {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: $l-width) {
+  .modal-agreement__text {
+    font-size: 21px;
+  }
+}
