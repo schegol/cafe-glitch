@@ -1,0 +1,86 @@
+.map {
+  position: relative;
+}
+
+.map__container {
+  position: relative;
+
+  width: 100%;
+  height: 300px;
+
+  background-color: #18181a;
+
+  overflow: hidden;
+
+  &::before {
+    @include abs-pseudo;
+
+    top: -6px;
+    left: -30%;
+
+    width: 160%;
+    height: 50px;
+
+    background-image: url("../img/map-border-top-4.svg");
+    background-position: top;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    z-index: 2;
+  }
+
+  &::after {
+    @include abs-pseudo;
+
+    bottom: -6px;
+    left: -30%;
+
+    width: 160%;
+    height: 50px;
+
+    background-image: url("../img/map-border-bottom-4.svg");
+    background-position: bottom;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+}
+
+.map__api-container {
+  width: 100%;
+  height: 110%;
+
+  filter: invert(1);
+}
+
+.map__backup-image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center center;
+}
+
+@media (min-width: $m-width) {
+  .map__container {
+    height: 450px;
+
+    &::before,
+    &::after {
+      left: -1%;
+
+      width: 102%;
+      height: 60px;
+    }
+  }
+}
+
+@media (min-width: $l-width) {
+  .map__container {
+    height: 650px;
+
+    &::before,
+    &::after {
+      height: 85px;
+    }
+  }
+}

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Cafe Glitch: для тех, у кого есть вкус не только к еде</title>
+  <link rel="preload" href="fonts/Chromia-Bold.woff2" as="font" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.min.css">
   <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
@@ -22,14 +23,29 @@
     </div>
   </header>
   <main class="main">
-
+    <section class="map">
+      <h2 class="visually-hidden">«Cafe Glitch» на карте</h2>
+      <div class="map__container">
+        <div class="map__api-container" id="map"></div>
+        <picture>
+          <source type="image/webp" media="(min-width: 1200px)" srcset="img/map-l@1x.webp 1x, img/map-l@2x.webp 2x">
+          <source type="image/webp" media="(min-width: 768px)" srcset="img/map-m@1x.webp 1x, img/map-m@2x.webp 2x">
+          <source type="image/webp" media="(min-width: 500px)" srcset="img/map-s@1x.webp 1x, img/map-s@2x.webp 2x">
+          <source type="image/webp" srcset="img/map-xs@1x.webp 1x, img/map-xs@2x.webp 2x">
+          <source media="(min-width: 1200px)" srcset="img/map-l@1x.jpg 1x, img/map-l@2x.jpg 2x">
+          <source media="(min-width: 768px)" srcset="img/map-m@1x.jpg 1x, img/map-m@2x.jpg 2x">
+          <source media="(min-width: 500px)" srcset="img/map-s@1x.jpg 1x, img/map-s@2x.jpg 2x">
+          <img class="map__backup-image" src="img/map-xs@1x.jpg" srcset="img/map-xs@2x.jpg 2x" alt="Санкт-Петербург, улица Думская, дом 9">
+        </picture>
+      </div>
+    </section>
   </main>
 
   <nav class="main-nav">
 
   </nav>
 
-  <section class="modal-agreement">
+  <!-- <section class="modal-agreement">
     <h1 class="visually-hidden"></h1>
     <div class="modal-agreement__header">
       <button class="modal-agreement__button modal-agreement__button--resize">
@@ -38,10 +54,10 @@
         	 <path fill="#ffffff" d="M255.1,0H141.7H28.3H0v28.3v113.4v85.1v28.3v28.3h28.3h113.4h113.4h28.3v-28.3v-28.3v-85.1V28.3V0H255.1z
         	 M255.1,141.7v85.1H141.7H28.3v-85.1V28.3h113.4h113.4V141.7z"/>
         </svg>
-        <!-- <svg class="modal-agreement__button-icon modal-agreement__button-icon--minimize" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="10" height="2"
+        <svg class="modal-agreement__button-icon modal-agreement__button-icon--minimize" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="10" height="2"
         	 viewBox="0 0 284 284" xml:space="preserve">
         	 <rect fill="#ffffff" y="226.8" width="284" height="57"/>
-        </svg> -->
+        </svg>
       </button>
       <button class="modal-agreement__button modal-agreement__button--close">
         <svg class="modal-agreement__button-icon modal-agreement__button-icon--close" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="10" height="10"
@@ -70,6 +86,9 @@
         Наш сайт использует cookies для аналитики. Оставаясь на данном сайте, вы автоматически соглашаетесь с размещением файлов cookies в вашей системе. Если вы не согласны с условиями использования файлов cookies, вы можете покинуть сайт<span class="modal-agreement__text-underscore">_</span>
       </p>
     </div>
-  </section>
+  </section> -->
+
+  <script defer="" src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+  <script defer="" src="js/script.min.js"></script>
 </body>
 </html>
