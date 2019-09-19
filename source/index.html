@@ -19,10 +19,30 @@
 <body>
   <header class="header">
     <div class="header__logo-nest">
-      <img class="header__logo logo" src="img/logo-no-text.svg" width="220" height="220" alt="Логотип «Cafe Glitch»">
+      <picture>
+        <source media="(min-width: 768px)" srcset="img/logo-no-text.svg" width="350" height="350">
+        <source media="(min-width: 500px)" srcset="img/logo-no-text.svg" width="280" height="280">
+        <img class="header__logo logo" src="img/logo-no-text.svg" width="220" height="220" alt="Логотип «Cafe Glitch»">
+      </picture>
     </div>
   </header>
   <main class="main">
+    <nav class="navigation">
+      <ul class="navigation__menu">
+        <li class="navigation__item">
+          <a class="navigation__link" href="#">Кто мы</a>
+        </li>
+        <li class="navigation__item">
+          <a class="navigation__link" href="#">Почему мы</a>
+        </li>
+        <li class="navigation__item">
+          <a class="navigation__link" href="#">Как найти</a>
+        </li>
+        <li class="navigation__item">
+          <a class="navigation__link" href="#">Контакты</a>
+        </li>
+      </ul>
+    </nav>
     <section class="map">
       <h2 class="visually-hidden">«Cafe Glitch» на карте</h2>
       <div class="map__container">

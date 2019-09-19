@@ -4,7 +4,7 @@ var mapInteractive = document.querySelector('#map');
 if (mapInteractive) {
   ymaps.ready(function () {
     var myMap = new ymaps.Map('map', {
-      center: [59.932941, 30.327253],
+      center: [59.932741, 30.327253],
       zoom: 16,
       controls: []
     }, {
@@ -17,7 +17,7 @@ if (mapInteractive) {
 
     myPlacemarkWithContent = new ymaps.Placemark([59.932707, 30.327213], {
       hintContent: 'ул. Думская, д. 9',
-      balloonContent: 'Cafe Glitch'
+      balloonContent: 'Cafe Glitch: ул. Думская, д. 9'
     }, {
       iconLayout: 'default#imageWithContent',
       iconImageHref: 'img/icon-marker-inverted.svg',
