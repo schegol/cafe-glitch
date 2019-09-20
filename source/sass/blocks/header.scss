@@ -1,3 +1,23 @@
+@keyframes glitch-before {
+  $steps: 60;
+  @for $i from 0 through $steps {
+    #{percentage($i * (1 / $steps))} {
+      clip: rect(random(100)+px, 300px, 150px, 0);
+			transform: skew((random(100) / 120) + deg);
+    }
+  }
+}
+
+@keyframes glitch-after {
+  $steps: 60;
+  @for $i from 0 through $steps {
+    #{percentage($i * (1 / $steps))} {
+      clip: rect(random(10)+px, 300px, random(300)+px, random(10)+px);
+			transform: skew((random(100) / 120) + deg);
+    }
+  }
+}
+
 .header {
   display: grid;
   grid-template-rows: auto 250px auto;
@@ -28,10 +48,109 @@
 
 .header__logo {
   position: absolute;
-
-  display: block;
   top: 50%;
   left: 50%;
 
+  display: block;
+
   transform: translate(-50%, -50%);
+}
+
+.header__heading {
+  position: absolute;
+  top: 45px;
+  left: 50%;
+
+  max-width: 130px;
+
+  font-family: "Chromia", "Arial", sans-serif;
+  color: $dark-color;
+  text-align: right;
+  line-height: .9;
+  font-size: 34px;
+
+  transform: translateX(-50%);
+
+  &::before {
+    @include glitch-copy;
+
+    left: 1px;
+
+    text-shadow: -2px 0 #fcb1ff;
+
+    clip: rect(10px, 250px, 150px, 0);
+    animation: glitch-before 3s infinite linear alternate-reverse;
+    opacity: .8;
+  }
+
+  &::after {
+    @include glitch-copy;
+
+    left: -1px;
+
+    text-shadow: -2px 0 #27ffce, 2px 2px #fcb1ff;
+
+    animation: glitch-after 3s infinite linear alternate-reverse;
+    opacity: .8;
+  }
+}
+
+@media (min-width: $s-width) {
+  .header {
+    grid-template-rows: auto 260px auto;
+    grid-template-columns: auto 260px auto;
+  }
+
+  .header__heading {
+    // left: 62px;
+
+    max-width: 135px;
+
+    font-size: 36px;
+  }
+}
+
+@media (min-width: $m-width) {
+  .header {
+    grid-template-rows: auto 320px auto;
+    grid-template-columns: auto 320px auto;
+  }
+
+  .header__heading {
+    top: 57px;
+
+    max-width: 165px;
+
+    font-size: 44px;
+  }
+}
+
+@media (min-width: $l-width) {
+  .header {
+    grid-template-rows: auto 420px auto;
+    grid-template-columns: auto 420px auto;
+  }
+
+  .header__heading {
+    top: 83px;
+
+    max-width: 200px;
+
+    font-size: 54px;
+  }
+}
+
+@media (min-width: $xl-width) {
+  .header {
+    grid-template-rows: auto 580px auto;
+    grid-template-columns: auto 580px auto;
+  }
+
+  .header__heading {
+    top: 110px;
+
+    max-width: 285px;
+
+    font-size: 77px;
+  }
 }

@@ -60,7 +60,7 @@
   object-position: center center;
 }
 
-@media (min-width: $m-width) {
+@media (min-width: $l-width) {
   .map__container {
     height: 450px;
 
@@ -74,7 +74,7 @@
   }
 }
 
-@media (min-width: $l-width) {
+@media (min-width: $xl-width) {
   .map__container {
     height: 650px;
 

@@ -113,13 +113,13 @@
   animation-iteration-count: infinite;
 }
 
-@media (min-width: $m-width) {
+@media (min-width: $l-width) {
   .modal-agreement__text {
     font-size: 18px;
   }
 }
 
-@media (min-width: $l-width) {
+@media (min-width: $xl-width) {
   .modal-agreement__text {
     font-size: 21px;
   }
